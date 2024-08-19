@@ -5,19 +5,19 @@
              url("https://khurkham.github.io/fonts/NamKhoneUnicode.ttf") format("ttf");
       }
      @font-face {
-        font-family:"GHK TaungGyi";
+        font-family:"GHK_TaungGyi";
         src: url("https://khurkham.github.io/fonts/GHKTaungGyi.woff") format("woff"),
              url("https://khurkham.github.io/fonts/GHKTaungGyi.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/GHKTaungGyi.ttf") format("ttf");
       }
      @font-face {
-        font-family:"GHK TaungGyi2";
+        font-family:"GHK_TaungGyi2";
         src: url("https://khurkham.github.io/fonts/GHKTaungGyi2.woff") format("woff"),
              url("https://khurkham.github.io/fonts/GHKTaungGyi2.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/GHKTaungGyi2.ttf") format("ttf");
       }
       @font-face {
-        font-family:"GreatHorKham Yangon";
+        font-family:"GreatHorKham_Yangon";
         src: url("https://khurkham.github.io/fonts/GreatHorKhamYangon.woff") format("woff"),
              url("https://khurkham.github.io/fonts/GreatHorKhamYangon.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/GreatHorKhamYangon.ttf") format("ttf");
@@ -35,7 +35,7 @@
              url("https://khurkham.github.io/fonts/Yunghkio.ttf") format("ttf");
       }
      @font-face {
-        font-family:"Yunghkio Unicode";
+        font-family:"Yunghkio_Unicode";
         src: url("https://khurkham.github.io/fonts/YunghkioUnicode.woff") format("woff"),
              url("https://khurkham.github.io/fonts/YunghkioUnicode.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/YunghkioUnicode.ttf") format("ttf");
@@ -53,13 +53,13 @@
              url("https://khurkham.github.io/fonts/YunghkioPop.ttf") format("ttf");
       }
      @font-face {
-        font-family:"Shan Unicode";
+        font-family:"Shan_Unicode";
         src: url("https://khurkham.github.io/fonts/ShanUnicode.woff") format("woff"),
              url("https://khurkham.github.io/fonts/ShanUnicode.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/ShanUnicode.ttf") format("ttf");
       }
      @font-face {
-        font-family:"Ours-Unicode";
+        font-family:"Ours_Unicode";
         src: url("https://khurkham.github.io/fonts/Ours-Unicode.woff") format("woff"),
              url("https://khurkham.github.io/fonts/Ours-Unicode.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/Ours-Unicode.ttf") format("ttf");
@@ -67,19 +67,19 @@
  
     
    @font-face {
-        font-family:"MUA Office";
+        font-family:"MUA_Office";
         src: url("https://khurkham.github.io/fonts/MUAOffice.woff") format("woff"),
              url("https://khurkham.github.io/fonts/MUAOffice.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/MUAOffice.ttf") format("ttf");
       }
    @font-face {
-        font-family:"NamKhone Web Pro";
+        font-family:"NamKhone_Web_Pro";
         src: url("https://khurkham.github.io/fonts/NamKhoneWebPro.woff") format("woff"),
              url("https://khurkham.github.io/fonts/NamKhoneWebPro.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/NamKhoneWebPro.ttf") format("ttf");
       }
    @font-face {
-        font-family:"NamTeng Web Pro";
+        font-family:"NamTeng_Web_Pro";
         src: url("https://khurkham.github.io/fonts/NamTengWebPro.woff") format("woff"),
              url("https://khurkham.github.io/fonts/NamTengWebPro.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/NamTengWebPro.ttf") format("ttf");
@@ -97,43 +97,43 @@
              url("https://khurkham.github.io/fonts/NamTeng2017.ttf") format("ttf");
       }
    @font-face {
-        font-family:"Shan Wanhai";
+        font-family:"Shan_Wanhai";
         src: url("https://khurkham.github.io/fonts/ShanWanhai.woff") format("woff"),
              url("https://khurkham.github.io/fonts/ShanWanhai.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/ShanWanhai.ttf") format("ttf");
       }
      @font-face {
-        font-family:"NK SSmart2";
+        font-family:"NK_SSmart2";
         src: url("https://khurkham.github.io/fonts/NKSSmart2.woff") format("woff"),
              url("https://khurkham.github.io/fonts/NKSSmart2.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/NKSSmart2.ttf") format("ttf");
       }
      @font-face {
-        font-family:"NK SSmart3";
+        font-family:"NK_SSmart3";
         src: url("https://khurkham.github.io/fonts/NKSSmart3.woff") format("woff"),
              url("https://khurkham.github.io/fonts/NKSSmart3.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/NKSSmart3.ttf") format("ttf");
       }
      @font-face {
-        font-family:"NK SSmart4";
+        font-family:"NK_SSmart4";
         src: url("https://khurkham.github.io/fonts/NKSSmart4.woff") format("woff"),
              url("https://khurkham.github.io/fonts/NKSSmart4.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/NKSSmart4.ttf") format("ttf");
       }
      @font-face {
-        font-family:"GHK Muse";
+        font-family:"GHK_Muse";
         src: url("https://khurkham.github.io/fonts/GHKMuse.woff") format("woff"),
              url("https://khurkham.github.io/fonts/GHKMuSe.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/GHKMuse.ttf") format("ttf");
       }
    @font-face {
-        font-family:"GHK KengTung";
+        font-family:"GHK_KengTung";
         src: url("https://khurkham.github.io/fonts/GHKKengTung.woff") format("woff"),
              url("https://khurkham.github.io/fonts/GHKKengTung.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/GHKKengTung.ttf") format("ttf");
       }
      @font-face {
-        font-family:"GHK Tachileik";
+        font-family:"GHK_Tachileik";
         src: url("https://khurkham.github.io/fonts/GHKTachileik.woff") format("woff"),
              url("https://khurkham.github.io/fonts/GHKTachileik.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/GHKTachileik.ttf") format("ttf");
@@ -175,7 +175,7 @@
              url("https://khurkham.github.io/fonts/KT3.ttf") format("ttf");
       }
      @font-face {
-        font-family:"Cherry Unicode";
+        font-family:"Cherry_Unicode";
         src: url("https://khurkham.github.io/fonts/CherryUnicode.woff") format("woff"),
              url("https://khurkham.github.io/fonts/CherryUnicode.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/CherryUnicode.ttf") format("ttf");
@@ -187,25 +187,25 @@
              url("https://khurkham.github.io/fonts/KhunPaOh.ttf") format("ttf");
       }
      @font-face {
-        font-family:"MM Phetkon";
+        font-family:"MM_Phetkon";
         src: url("https://khurkham.github.io/fonts/MMPhetkon.woff") format("woff"),
              url("https://khurkham.github.io/fonts/MMPhetkon.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/MMPhetkon.ttf") format("ttf");
       }
      @font-face {
-        font-family:"Myanmar Ethnic";
+        font-family:"Myanmar_Ethnic";
         src: url("https://khurkham.github.io/fonts/MyanmarEthnic.woff") format("woff"),
              url("https://khurkham.github.io/fonts/MyanmarEthnic.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/MyanmarEthnic.ttf") format("ttf");
       }
    @font-face {
-        font-family:"MM Ethnic";
+        font-family:"MM_Ethnic";
         src: url("https://khurkham.github.io/fonts/MMEthnic.woff") format("woff"),
              url("https://khurkham.github.io/fonts/MMEthnic.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/MMEthnic.ttf") format("ttf");
       }
      @font-face {
-        font-family:"Myanmar KatKuu";
+        font-family:"Myanmar_KatKuu";
         src: url("https://khurkham.github.io/fonts/MyanmarKatKuu.woff") format("woff"),
              url("https://khurkham.github.io/fonts/MyanmarKatKuu.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/MyanmarKatKuu.ttf") format("ttf");
@@ -218,139 +218,139 @@
              url("https://khurkham.github.io/fonts/Pyidaungsu.ttf") format("ttf");
       }
      @font-face {
-        font-family:"Masterpiece Uni Round";
+        font-family:"Masterpiece_Uni_Round";
         src: url("https://khurkham.github.io/fonts/MasterpieceUniRound.woff") format("woff"),
              url("https://khurkham.github.io/fonts/MasterpieceUniRound.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/MasterpieceUniRound.ttf") format("ttf");
       }
      @font-face {
-        font-family:"Myanmar Angoun";
+        font-family:"Myanmar_Angoun";
         src: url("https://khurkham.github.io/fonts/MyanmarAngoun.woff") format("woff"),
              url("https://khurkham.github.io/fonts/MyanmarAngoun.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/MyanmarAngoun.ttf") format("ttf");
       }
      @font-face {
-        font-family:"Myanmar Gantgaw";
+        font-family:"Myanmar_Gantgaw";
         src: url("https://khurkham.github.io/fonts/MyanmarGantgaw.woff") format("woff"),
              url("https://khurkham.github.io/fonts/MyanmarGantgaw.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/MyanmarGantgaw.ttf") format("ttf");
       }
      @font-face {
-        font-family:"Myanmar Sagar";
+        font-family:"Myanmar_Sagar";
         src: url("https://khurkham.github.io/fonts/MyanmarSagar.woff") format("woff"),
              url("https://khurkham.github.io/fonts/MyanmarSagar.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/MyanmarSagar.ttf") format("ttf");
       }
      @font-face {
-        font-family:"Myanmar Yinmar";
+        font-family:"Myanmar_Yinmar";
         src: url("https://khurkham.github.io/fonts/MyanmarYinmar.woff") format("woff"),
              url("https://khurkham.github.io/fonts/MyanmarYinmar.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/MyanmarYinmar.ttf") format("ttf");
       }
      @font-face {
-        font-family:"Myanmar Square";
+        font-family:"Myanmar_Square";
         src: url("https://khurkham.github.io/fonts/MyanmarSquare.woff") format("woff"),
              url("https://khurkham.github.io/fonts/MyanmarSquare.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/MyanmarSquare.ttf") format("ttf");
       }
      @font-face {
-        font-family:"Myanmar Square Light";
+        font-family:"Myanmar_Square_Light";
         src: url("https://khurkham.github.io/fonts/MyanmarSquareLight.woff") format("woff"),
              url("https://khurkham.github.io/fonts/MyanmarSquareLight.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/MyanmarSquareLight.ttf") format("ttf");
       }
      @font-face {
-        font-family:"Myanmar Sanpya";
+        font-family:"Myanmar_Sanpya";
         src: url("https://khurkham.github.io/fonts/MyanmarSanpya.woff") format("woff"),
              url("https://khurkham.github.io/fonts/MyanmarSanpya.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/MyanmarSanpya.ttf") format("ttf");
       }
      @font-face {
-        font-family:"Myanmar Sabae";
+        font-family:"Myanmar_Sabae";
         src: url("https://khurkham.github.io/fonts/MyanmarSabae.woff") format("woff"),
              url("https://khurkham.github.io/fonts/MyanmarSabae.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/MyanmarSabae.ttf") format("ttf");
       }
      @font-face {
-        font-family:"Myanmar Punk";
+        font-family:"Myanmar_Punk";
         src: url("https://khurkham.github.io/fonts/MyanmarPunk.woff") format("woff"),
              url("https://khurkham.github.io/fonts/MyanmarPunk.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/MyanmarPunk.ttf") format("ttf");
       }
      @font-face {
-        font-family:"Myanmar Ponenyet";
+        font-family:"Myanmar_Ponenyet";
         src: url("https://khurkham.github.io/fonts/MyanmarPonenyet.woff") format("woff"),
              url("https://khurkham.github.io/fonts/MyanmarPonenyet.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/MyanmarPonenyet.ttf") format("ttf");
       }
      @font-face {
-        font-family:"Myanmar Pixel";
+        font-family:"Myanmar_Pixel";
         src: url("https://khurkham.github.io/fonts/MyanmarPixel.woff") format("woff"),
              url("https://khurkham.github.io/fonts/MyanmarPixel.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/MyanmarPixel.ttf") format("ttf");
       }
      @font-face {
-        font-family:"Myanmar Pixel Smooth";
+        font-family:"Myanmar_Pixel_Smooth";
         src: url("https://khurkham.github.io/fonts/MyanmarPixelSmooth.woff") format("woff"),
              url("https://khurkham.github.io/fonts/MyanmarPixelSmooth.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/MyanmarPixelSmooth.ttf") format("ttf");
       }
      @font-face {
-        font-family:"Myanmar Phetsot";
+        font-family:"Myanmar_Phetsot";
         src: url("https://khurkham.github.io/fonts/MyanmarPhetsot.woff") format("woff"),
              url("https://khurkham.github.io/fonts/MyanmarPhetsot.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/MyanmarPhetsot.ttf") format("ttf");
       }
      @font-face {
-        font-family:"Myanmar Pauklay";
+        font-family:"Myanmar_Pauklay";
         src: url("https://khurkham.github.io/fonts/MyanmarPauklay.woff") format("woff"),
              url("https://khurkham.github.io/fonts/MyanmarPauklay.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/MyanmarPauklay.ttf") format("ttf");
       }
      @font-face {
-        font-family:"Myanmar Njaun";
+        font-family:"Myanmar_Njaun";
         src: url("https://khurkham.github.io/fonts/MyanmarNjaun.woff") format("woff"),
              url("https://khurkham.github.io/fonts/MyanmarNjaun.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/MyanmarNjaun.ttf") format("ttf");
       }
      @font-face {
-        font-family:"Myanmar Chatu";
+        font-family:"Myanmar_Chatu";
         src: url("https://khurkham.github.io/fonts/MyanmarChatu.woff") format("woff"),
              url("https://khurkham.github.io/fonts/MyanmarChatu.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/MyanmarChatu.ttf") format("ttf");
       }
      @font-face {
-        font-family:"Myanmar Nayone";
+        font-family:"Myanmar_Nayone";
         src: url("https://khurkham.github.io/fonts/MyanmarNayone.woff") format("woff"),
              url("https://khurkham.github.io/fonts/MyanmarNayone.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/MyanmarNayone.ttf") format("ttf");
       }
      @font-face {
-        font-family:"Myanmar Kuttar";
+        font-family:"Myanmar_Kuttar";
         src: url("https://khurkham.github.io/fonts/MyanmarKuttar.woff") format("woff"),
              url("https://khurkham.github.io/fonts/MyanmarKuttar.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/MyanmarKuttar.ttf") format("ttf");
       }
      @font-face {
-        font-family:"Myanmar Head One";
+        font-family:"Myanmar_Head_One";
         src: url("https://khurkham.github.io/fonts/MyanmarHeadOne.woff") format("woff"),
              url("https://khurkham.github.io/fonts/MyanmarHeadOne.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/MyanmarHeadOne.ttf") format("ttf");
       }
      @font-face {
-        font-family:"MM Jasmine";
+        font-family:"MM_Jasmine";
         src: url("https://khurkham.github.io/fonts/MMJasmine.woff") format("woff"),
              url("https://khurkham.github.io/fonts/MMJasmine.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/MMJasmine.ttf") format("ttf");
       }
      @font-face {
-        font-family:"Jasmine Unicode";
+        font-family:"Jasmine_Unicode";
         src: url("https://khurkham.github.io/fonts/JasmineUnicode.woff") format("woff"),
              url("https://khurkham.github.io/fonts/JasmineUnicode.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/JasmineUnicode.ttf") format("ttf");
       }
      @font-face {
-        font-family:"MM Bagan";
+        font-family:"MM_Bagan";
         src: url("https://khurkham.github.io/fonts/MMBagan.woff") format("woff"),
              url("https://khurkham.github.io/fonts/MBagan.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/MMBagan.ttf") format("ttf");
@@ -362,25 +362,25 @@
              url("https://khurkham.github.io/fonts/Hopone.ttf") format("ttf");
       }
      @font-face {
-        font-family:"Myanmar Kalay";
+        font-family:"Myanmar_Kalay";
         src: url("https://khurkham.github.io/fonts/MyanmarKalay.woff") format("woff"),
              url("https://khurkham.github.io/fonts/MyanmarKalay.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/MyanmarKalay.ttf") format("ttf");
       }
      @font-face {
-        font-family:"UniHeart LineLine";
+        font-family:"UniHeart_LineLine";
         src: url("https://khurkham.github.io/fonts/UniHeartLineLine.woff") format("woff"),
              url("https://khurkham.github.io/fonts/UniHeartLineLine.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/UniHeartLineLine.ttf") format("ttf");
       }
      @font-face {
-        font-family:"Myanmar April Display";
+        font-family:"Myanmar_April_Display";
         src: url("https://khurkham.github.io/fonts/MyanmarAprilDisplay.woff") format("woff"),
              url("https://khurkham.github.io/fonts/MyanmarAprilDisplay.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/MyanmarAprilDisplay.ttf") format("ttf");
       }
    @font-face {
-        font-family:"MM Taunggyi";
+        font-family:"MM_Taunggyi";
         src: url("https://khurkham.github.io/fonts/MMTaunggyi.woff") format("woff"),
              url("https://khurkham.github.io/fonts/MMTaunggyi.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/MMTaunggyi.ttf") format("ttf");
@@ -392,19 +392,19 @@
              url("https://khurkham.github.io/fonts/Myanglish.ttf") format("ttf");
       }
    @font-face {
-        font-family:"Myanmar Handwriting";
+        font-family:"Myanmar_Handwriting";
         src: url("https://khurkham.github.io/fonts/MyanmarHandwriting.woff") format("woff"),
              url("https://khurkham.github.io/fonts/MyanmarHandwriting.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/MyanmarHandwriting.ttf") format("ttf");
       }
    @font-face {
-        font-family:"Myanmar Pyu Pro";
+        font-family:"Myanmar_Pyu_Pro";
         src: url("https://khurkham.github.io/fonts/MyanmarPyuPro.woff") format("woff"),
              url("https://khurkham.github.io/fonts/MyanmarPyuPro.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/MyanmarPyuPro.ttf") format("ttf");
       }
    @font-face {
-        font-family:"Myanmar Thuriya";
+        font-family:"Myanmar_Thuriya";
         src: url("https://khurkham.github.io/fonts/MyanmarThuriya.woff") format("woff"),
              url("https://khurkham.github.io/fonts/MyanmarThuriya.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/MyanmarThuriya.ttf") format("ttf");
