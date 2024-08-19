@@ -2,7 +2,7 @@
 1. တွၼ်ႈဝၢင်းၶူတ်ႉ
 ၵူးဢဝ်ၶူတ်ႉတႂ်ႈၼႆႉ ၵႂႃႇဝၢင်းသႂ်ႇ ၽၢႆႇတႂ်ႈၶူတ်ႉ <pre id="codeNormalTab"> <code class="html" id="codeNormal">&lt;head&gt;</code></pre>  ဢၼ်ၼႆႉ -
 
-<pre id="codeNormalTab"> <code class="html" id="codeNormal">&lt;link href='https://saosu-mp.github.io/font/all.css' rel='stylesheet'/&gt;</code></pre>
+<pre id="codeNormalTab"> <code class="html" id="codeNormal">&lt;link href='https://khurkham.github.io/khurkhamfonts.css' rel='stylesheet'/&gt;</code></pre>
 
 2. တွၼ်ႈဝၢင်းၾွၼ်ႉ
 ဢွင်ႈတီႈ <font color="blue"> font-family: </font>  လႄႈ တီႈၸုမ်းၾွၼ်ႉ <font color="blue"> sans-serif </font>  ၼၼ်ႉ ဢဝ်ၸိုဝ်ႈၸိုဝ်ႈၾွၼ်ႉ ဢၼ်ၸဝ်ႈၵဝ်ႇၶႂ်ႈၸႂ်ႉၼၼ်ႉ ၵႂႃႇဝၢင်းသႂ်ႇၸွမ်း။
