@@ -5,19 +5,19 @@
              url("https://khurkham.github.io/fonts/NamKhoneUnicode.ttf") format("ttf");
       }
      @font-face {
-        font-family:"GHKTaungGyi";
+        font-family:"GHK TaungGyi";
         src: url("https://khurkham.github.io/fonts/GHKTaungGyi.woff") format("woff"),
              url("https://khurkham.github.io/fonts/GHKTaungGyi.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/GHKTaungGyi.ttf") format("ttf");
       }
      @font-face {
-        font-family:"GHKTaungGyi2";
+        font-family:"GHK TaungGyi2";
         src: url("https://khurkham.github.io/fonts/GHKTaungGyi2.woff") format("woff"),
              url("https://khurkham.github.io/fonts/GHKTaungGyi2.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/GHKTaungGyi2.ttf") format("ttf");
       }
       @font-face {
-        font-family:"GreatHorKhamYangon";
+        font-family:"Great Hor Kham Yangon";
         src: url("https://khurkham.github.io/fonts/GreatHorKhamYangon.woff") format("woff"),
              url("https://khurkham.github.io/fonts/GreatHorKhamYangon.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/GreatHorKhamYangon.ttf") format("ttf");
@@ -35,7 +35,7 @@
              url("https://khurkham.github.io/fonts/Yunghkio.ttf") format("ttf");
       }
      @font-face {
-        font-family:"Yunghkio_Unicode";
+        font-family:"Yunghkio Unicode";
         src: url("https://khurkham.github.io/fonts/YunghkioUnicode.woff") format("woff"),
              url("https://khurkham.github.io/fonts/YunghkioUnicode.woff2") format("woff2"),
              url("https://khurkham.github.io/fonts/YunghkioUnicode.ttf") format("ttf");
