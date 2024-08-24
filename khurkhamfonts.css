@@ -433,3 +433,15 @@
     font-style: normal;
 
 }
+@font-face {
+    font-family: 'greathorkham_yangonregular';
+    src: url('https://khurkham.github.io/fonts/greathorkhamyangon-webfont.eot');
+    src: url('https://khurkham.github.io/fonts/greathorkhamyangon-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://khurkham.github.io/fonts/greathorkhamyangon-webfont.woff2') format('woff2'),
+         url('https://khurkham.github.io/fonts/greathorkhamyangon-webfont.woff') format('woff'),
+         url('https://khurkham.github.io/fonts/greathorkhamyangon-webfont.ttf') format('truetype'),
+         url('https://khurkham.github.io/fonts/greathorkhamyangon-webfont.svg#greathorkham_yangonregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
