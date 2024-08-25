@@ -420,13 +420,13 @@
 }
 
 @font-face {
-    font-family: 'uploaded_file';
+    font-family: 'myanmarpaohone';
     src: url('https://khurkham.github.io/fonts/myanmarpaohone-taifont.eot');
     src: url('https://khurkham.github.io/fonts/myanmarpaohone-taifont.eot?#iefix') format('embedded-opentype'),
          url('https://khurkham.github.io/fonts/myanmarpaohone-taifont.woff2') format('woff2'),
          url('https://khurkham.github.io/fonts/myanmarpaohone-taifont.woff') format('woff'),
          url('https://khurkham.github.io/fonts/myanmarpaohone-taifont.ttf') format('truetype'),
-         url('https://khurkham.github.io/fonts/myanmarpaohone-taifont.svg#uploaded_fileregular') format('svg');
+         url('https://khurkham.github.io/fonts/myanmarpaohone-taifont.svg#myanmarpaohoneregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
