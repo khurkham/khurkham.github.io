@@ -778,17 +778,7 @@
     font-style: normal;
 }
 
-@font-face {
-    font-family: '003_koz_kjrregular';
-    src: url('https://khurkham.github.io/fonts/003kozkjr-webfont.eot');
-    src: url('https://khurkham.github.io/fonts/003kozkjr-webfont.eot?#iefix') format('embedded-opentype'),
-         url('https://khurkham.github.io/fonts/003kozkjr-webfont.woff2') format('woff2'),
-         url('https://khurkham.github.io/fonts/003kozkjr-webfont.woff') format('woff'),
-         url('https://khurkham.github.io/fonts/003kozkjr-webfont.ttf') format('truetype'),
-         url('https://khurkham.github.io/fonts/003kozkjr-webfont.svg#003_koz_kjrregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
+
 
 @font-face {
     font-family: 'a_ying_70normal';
@@ -802,17 +792,6 @@
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'bshanbbregular';
-    src: url('https://khurkham.github.io/fonts/bshanbb-webfont.eot');
-    src: url('https://khurkham.github.io/fonts/bshanbb-webfont.eot?#iefix') format('embedded-opentype'),
-         url('https://khurkham.github.io/fonts/bshanbb-webfont.woff2') format('woff2'),
-         url('https://khurkham.github.io/fonts/bshanbb-webfont.woff') format('woff'),
-         url('https://khurkham.github.io/fonts/bshanbb-webfont.ttf') format('truetype'),
-         url('https://khurkham.github.io/fonts/bshanbb-webfont.svg#bshanbbregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
 
 @font-face {
     font-family: 'kt_unicode_03regular';
