@@ -415,6 +415,13 @@
          url("https://khurkham.github.io/fonts/MyanmarPaOhOne.woff2") format("woff2"),
          url("https://khurkham.github.io/fonts/MyanmarPaOhOne.ttf") format("ttf");
   }
+
+@font-face {
+    font-family:"a_ying70";
+    src: url("https://khurkham.github.io/fonts/A-Ying70.woff") format("woff"),
+         url("https://khurkham.github.io/fonts/A-Ying70.woff2") format("woff2"),
+         url("https://khurkham.github.io/fonts/A-Ying70.ttf") format("ttf");
+  }
 @font-face {
     font-family:"KoZKJR";
     src: url("https://khurkham.github.io/fonts/003KoZKJR.woff") format("woff"),
