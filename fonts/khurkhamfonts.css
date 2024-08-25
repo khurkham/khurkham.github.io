@@ -839,11 +839,6 @@
     font-style: normal;
 }
 
-
-
-
-
-
 @font-face {
     font-family: 'cherry_unicode';
     src: url('https://khurkham.github.io/fonts/cherryunicode-taifont.eot');
@@ -856,8 +851,6 @@
     font-style: normal;
 }
 
-
-
 @font-face {
     font-family: 'a_ying_01_unicoderegular';
     src: url('https://khurkham.github.io/fonts/aying01unicode-webfont.eot');
@@ -868,9 +861,7 @@
          url('https://khurkham.github.io/fonts/aying01unicode-webfont.svg#a_ying_01_unicoderegular') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
-
 
 @font-face {
     font-family: '003_koz_kjrregular';
@@ -882,11 +873,7 @@
          url('https://khurkham.github.io/fonts/003kozkjr-webfont.svg#003_koz_kjrregular') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
-
-
-
 
 @font-face {
     font-family: 'a_ying_70normal';
@@ -898,11 +885,7 @@
          url('https://khurkham.github.io/fonts/a-ying70-webfont.svg#a_ying_70normal') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
-
-
-
 
 @font-face {
     font-family: 'bshanbbregular';
@@ -914,9 +897,7 @@
          url('https://khurkham.github.io/fonts/bshanbb-webfont.svg#bshanbbregular') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
-
 
 @font-face {
     font-family: 'kt_unicode_03regular';
@@ -928,15 +909,7 @@
          url('https://khurkham.github.io/fonts/kt3-webfont.svg#kt_unicode_03regular') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
-
-
-
-
-
-
-
 
 @font-face {
     font-family: 'kawsai-24asa';
@@ -948,43 +921,29 @@
          url('https://khurkham.github.io/fonts/kawsai-24-webfont.svg#kawsai-24asa') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
-
-
 
 @font-face {
     font-family: 'mm_baganregular';
-    src: url('mmbagan-webfont.eot');
-    src: url('mmbagan-webfont.eot?#iefix') format('embedded-opentype'),
-         url('mmbagan-webfont.woff2') format('woff2'),
-         url('mmbagan-webfont.woff') format('woff'),
-         url('mmbagan-webfont.ttf') format('truetype'),
-         url('mmbagan-webfont.svg#mm_baganregular') format('svg');
+    src: url('https://khurkham.github.io/fonts/mmbagan-webfont.eot');
+    src: url('https://khurkham.github.io/fonts/mmbagan-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://khurkham.github.io/fonts/mmbagan-webfont.woff2') format('woff2'),
+         url('https://khurkham.github.io/fonts/mmbagan-webfont.woff') format('woff'),
+         url('https://khurkham.github.io/fonts/mmbagan-webfont.ttf') format('truetype'),
+         url('https://khurkham.github.io/fonts/mmbagan-webfont.svg#mm_baganregular') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
-
-
-
 
 @font-face {
     font-family: 'mm_taunggyiregular';
-    src: url('mmtaunggyi-webfont.eot');
-    src: url('mmtaunggyi-webfont.eot?#iefix') format('embedded-opentype'),
-         url('mmtaunggyi-webfont.woff2') format('woff2'),
-         url('mmtaunggyi-webfont.woff') format('woff'),
-         url('mmtaunggyi-webfont.ttf') format('truetype'),
-         url('mmtaunggyi-webfont.svg#mm_taunggyiregular') format('svg');
+    src: url('https://khurkham.github.io/fonts/mmtaunggyi-webfont.eot');
+    src: url('https://khurkham.github.io/fonts/mmtaunggyi-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://khurkham.github.io/fonts/mmtaunggyi-webfont.woff2') format('woff2'),
+         url('https://khurkham.github.io/fonts/mmtaunggyi-webfont.woff') format('woff'),
+         url('https://khurkham.github.io/fonts/mmtaunggyi-webfont.ttf') format('truetype'),
+         url('https://khurkham.github.io/fonts/mmtaunggyi-webfont.svg#mm_taunggyiregular') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
-
-
-
-
-
-
 
