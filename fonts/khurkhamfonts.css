@@ -84,7 +84,7 @@
 }
 
 @font-face {
-    font-family: 'kawsai-24asa';
+    font-family: 'kawsai_24asa';
     src: url('https://khurkham.github.io/fonts/kawsai-24-taifont.eot');
     src: url('https://khurkham.github.io/fonts/kawsai-24-taifont.eot?#iefix') format('embedded-opentype'),
          url('https://khurkham.github.io/fonts/kawsai-24-taifont.woff2') format('woff2'),
@@ -108,7 +108,7 @@
 }
 
 @font-face {
-    font-family: 'kengtawng.002';
+    font-family: 'kengtawng002';
     src: url('https://khurkham.github.io/fonts/kengtawng2-taifont.eot');
     src: url('https://khurkham.github.io/fonts/kengtawng2-taifont.eot?#iefix') format('embedded-opentype'),
          url('https://khurkham.github.io/fonts/kengtawng2-taifont.woff2') format('woff2'),
@@ -120,7 +120,7 @@
 }
 
 @font-face {
-    font-family: 'khunpaohregular';
+    font-family: 'khunpaoh';
     src: url('https://khurkham.github.io/fonts/khunpaoh-taifont.eot');
     src: url('https://khurkham.github.io/fonts/khunpaoh-taifont.eot?#iefix') format('embedded-opentype'),
          url('https://khurkham.github.io/fonts/khunpaoh-taifont.woff2') format('woff2'),
@@ -180,7 +180,7 @@
 }
 
 @font-face {
-    font-family: 'luentai.info';
+    font-family: 'luentai_info';
     src: url('https://khurkham.github.io/fonts/luentai2-taifont.eot');
     src: url('https://khurkham.github.io/fonts/luentai2-taifont.eot?#iefix') format('embedded-opentype'),
          url('https://khurkham.github.io/fonts/luentai2-taifont.woff2') format('woff2'),
@@ -515,9 +515,6 @@
     font-style: normal;
 }
 
-
-
-
 @font-face {
     font-family: 'myanmar_sabae';
     src: url('https://khurkham.github.io/fonts/myanmarsabae-taifont.eot');
@@ -615,7 +612,7 @@
 }
 
 @font-face {
-    font-family: 'namkhoneunicoderegular';
+    font-family: 'namkhoneunicode';
     src: url('https://khurkham.github.io/fonts/namkhoneunicode-taifont.eot');
     src: url('https://khurkham.github.io/fonts/namkhoneunicode-taifont.eot?#iefix') format('embedded-opentype'),
          url('https://khurkham.github.io/fonts/namkhoneunicode-taifont.woff2') format('woff2'),
@@ -663,7 +660,7 @@
 }
 
 @font-face {
-    font-family: 'namteng_web_proregular';
+    font-family: 'namteng_web_pro';
     src: url('https://khurkham.github.io/fonts/namtengwebpro-taifont.eot');
     src: url('https://khurkham.github.io/fonts/namtengwebpro-taifont.eot?#iefix') format('embedded-opentype'),
          url('https://khurkham.github.io/fonts/namtengwebpro-taifont.woff2') format('woff2'),
@@ -711,7 +708,7 @@
 }
 
 @font-face {
-    font-family: 'ours-unicode';
+    font-family: 'ours_unicode';
     src: url('https://khurkham.github.io/fonts/ours-unicode-taifont.eot');
     src: url('https://khurkham.github.io/fonts/ours-unicode-taifont.eot?#iefix') format('embedded-opentype'),
          url('https://khurkham.github.io/fonts/ours-unicode-taifont.woff2') format('woff2'),
@@ -759,7 +756,7 @@
 }
 
 @font-face {
-    font-family: 'shan_wanhairegular';
+    font-family: 'shan_wanhai';
     src: url('https://khurkham.github.io/fonts/shanwanhai-taifont.eot');
     src: url('https://khurkham.github.io/fonts/shanwanhai-taifont.eot?#iefix') format('embedded-opentype'),
          url('https://khurkham.github.io/fonts/shanwanhai-taifont.woff2') format('woff2'),
@@ -783,7 +780,7 @@
 }
 
 @font-face {
-    font-family: 'uni-heart_lineline';
+    font-family: 'uni_heart_lineline';
     src: url('https://khurkham.github.io/fonts/uniheartlineline-taifont.eot');
     src: url('https://khurkham.github.io/fonts/uniheartlineline-taifont.eot?#iefix') format('embedded-opentype'),
          url('https://khurkham.github.io/fonts/uniheartlineline-taifont.woff2') format('woff2'),
@@ -807,7 +804,7 @@
 }
 
 @font-face {
-    font-family: 'yunghkio_004regular';
+    font-family: 'yunghkio_004';
     src: url('https://khurkham.github.io/fonts/yunghkio004-taifont.eot');
     src: url('https://khurkham.github.io/fonts/yunghkio004-taifont.eot?#iefix') format('embedded-opentype'),
          url('https://khurkham.github.io/fonts/yunghkio004-taifont.woff2') format('woff2'),
