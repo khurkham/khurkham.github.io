@@ -778,7 +778,6 @@
     font-style: normal;
 }
 
-
 @font-face {
     font-family: 'kt_unicode_03regular';
     src: url('https://khurkham.github.io/fonts/kt3-webfont.eot');
@@ -815,3 +814,352 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'greathorkham_yangon';
+    src: url('greathorkham_yangon-webfont.eot');
+    src: url('greathorkham_yangon-webfont.eot?#iefix') format('embedded-opentype'),
+         url('greathorkham_yangon-webfont.woff2') format('woff2'),
+         url('greathorkham_yangon-webfont.woff') format('woff'),
+         url('greathorkham_yangon-webfont.ttf') format('truetype'),
+         url('greathorkham_yangon-webfont.svg#greathorkham_yangon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'jasmine_unicode';
+    src: url('jasmineunicode-webfont.eot');
+    src: url('jasmineunicode-webfont.eot?#iefix') format('embedded-opentype'),
+         url('jasmineunicode-webfont.woff2') format('woff2'),
+         url('jasmineunicode-webfont.woff') format('woff'),
+         url('jasmineunicode-webfont.ttf') format('truetype'),
+         url('jasmineunicode-webfont.svg#jasmine_unicode') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'kamjing-2';
+    src: url('kamjing-webfont.eot');
+    src: url('kamjing-webfont.eot?#iefix') format('embedded-opentype'),
+         url('kamjing-webfont.woff2') format('woff2'),
+         url('kamjing-webfont.woff') format('woff'),
+         url('kamjing-webfont.ttf') format('truetype'),
+         url('kamjing-webfont.svg#kamjing-2') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AKL-FREE-003';
+    src: url('AKLFREE003.eot');
+    src: url('AKLFREE003.eot?#iefix') format('embedded-opentype'),
+        url('AKLFREE003.woff2') format('woff2'),
+        url('AKLFREE003.woff') format('woff'),
+        url('AKLFREE003.ttf') format('truetype'),
+        url('AKLFREE003.svg#AKLFREE003') format('svg');
+    font-weight: normal;
+    font-style: normal;    
+}
+
+@font-face {
+    font-family: 'AKL-FREE-001';
+    src: url('AKLFREE001.eot');
+    src: url('AKLFREE001.eot?#iefix') format('embedded-opentype'),
+        url('AKLFREE001.woff2') format('woff2'),
+        url('AKLFREE001.woff') format('woff'),
+        url('AKLFREE001.ttf') format('truetype'),
+        url('AKLFREE001.svg#AKLFREE001') format('svg');
+    font-weight: normal;
+    font-style: normal;    
+}
+
+@font-face {
+    font-family: 'AKL-FREE-002';
+    src: url('AKLFREE002.eot');
+    src: url('AKLFREE002.eot?#iefix') format('embedded-opentype'),
+        url('AKLFREE002.woff2') format('woff2'),
+        url('AKLFREE002.woff') format('woff'),
+        url('AKLFREE002.ttf') format('truetype'),
+        url('AKLFREE002.svg#AKLFREE002') format('svg');
+    font-weight: normal;
+    font-style: normal; 
+}
+
+@font-face {
+    font-family: 'AKL-022';
+    src: url('AKL022.eot');
+    src: url('AKL022.eot?#iefix') format('embedded-opentype'),
+        url('AKL022.woff2') format('woff2'),
+        url('AKL022.woff') format('woff'),
+        url('AKL022.ttf') format('truetype'),
+        url('AKL022.svg#AKL022') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'aj-kunheing-8';
+    src: url('ajkunheing8-regular-webfont.eot');
+    src: url('ajkunheing8-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('ajkunheing8-regular-webfont.woff2') format('woff2'),
+         url('ajkunheing8-regular-webfont.woff') format('woff'),
+         url('ajkunheing8-regular-webfont.ttf') format('truetype'),
+         url('ajkunheing8-regular-webfont.svg#aj-kunheing-8') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'aj-kunheing-9';
+    src: url('ajkunheing9-regular-webfont.eot');
+    src: url('ajkunheing9-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('ajkunheing9-regular-webfont.woff2') format('woff2'),
+         url('ajkunheing9-regular-webfont.woff') format('woff'),
+         url('ajkunheing9-regular-webfont.ttf') format('truetype'),
+         url('ajkunheing9-regular-webfont.svg#aj-kunheing-9') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'aj-kunheing-11';
+    src: url('ajkunheing11-regular-webfont.eot');
+    src: url('ajkunheing11-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('ajkunheing11-regular-webfont.woff2') format('woff2'),
+         url('ajkunheing11-regular-webfont.woff') format('woff'),
+         url('ajkunheing11-regular-webfont.ttf') format('truetype'),
+         url('ajkunheing11-regular-webfont.svg#aj-kunheing-11') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'aj-kunheing-12';
+    src: url('ajkunheing12-regular-webfont.eot');
+    src: url('ajkunheing12-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('ajkunheing12-regular-webfont.woff2') format('woff2'),
+         url('ajkunheing12-regular-webfont.woff') format('woff'),
+         url('ajkunheing12-regular-webfont.ttf') format('truetype'),
+         url('ajkunheing12-regular-webfont.svg#aj-kunheing-12') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'aj-kunheing-16';
+    src: url('ajkunheing16-regular-webfont.eot');
+    src: url('ajkunheing16-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('ajkunheing16-regular-webfont.woff2') format('woff2'),
+         url('ajkunheing16-regular-webfont.woff') format('woff'),
+         url('ajkunheing16-regular-webfont.ttf') format('truetype'),
+         url('ajkunheing16-regular-webfont.svg#aj-kunheing-16') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'aj-kunheing-17';
+    src: url('ajkunheing17-regular-webfont.eot');
+    src: url('ajkunheing17-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('ajkunheing17-regular-webfont.woff2') format('woff2'),
+         url('ajkunheing17-regular-webfont.woff') format('woff'),
+         url('ajkunheing17-regular-webfont.ttf') format('truetype'),
+         url('ajkunheing17-regular-webfont.svg#aj-kunheing-17') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'aj-kunheing-25';
+    src: url('ajkunheing25-webfont.eot');
+    src: url('ajkunheing25-webfont.eot?#iefix') format('embedded-opentype'),
+         url('ajkunheing25-webfont.woff2') format('woff2'),
+         url('ajkunheing25-webfont.woff') format('woff'),
+         url('ajkunheing25-webfont.ttf') format('truetype'),
+         url('ajkunheing25-webfont.svg#aj-kunheing-25') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'aj-kunheing-01';
+    src: url('ajkunheingetm01-regular-webfont.eot');
+    src: url('ajkunheingetm01-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('ajkunheingetm01-regular-webfont.woff2') format('woff2'),
+         url('ajkunheingetm01-regular-webfont.woff') format('woff'),
+         url('ajkunheingetm01-regular-webfont.ttf') format('truetype'),
+         url('ajkunheingetm01-regular-webfont.svg#aj-kunheing-01') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'aj-kunheing-03';
+    src: url('ajkunheingetm03-regular-webfont.eot');
+    src: url('ajkunheingetm03-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('ajkunheingetm03-regular-webfont.woff2') format('woff2'),
+         url('ajkunheingetm03-regular-webfont.woff') format('woff'),
+         url('ajkunheingetm03-regular-webfont.ttf') format('truetype'),
+         url('ajkunheingetm03-regular-webfont.svg#a_j_kunheing-03') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'aj-kunheing-04';
+    src: url('ajkunheingetm04-regular-webfont.eot');
+    src: url('ajkunheingetm04-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('ajkunheingetm04-regular-webfont.woff2') format('woff2'),
+         url('ajkunheingetm04-regular-webfont.woff') format('woff'),
+         url('ajkunheingetm04-regular-webfont.ttf') format('truetype'),
+         url('ajkunheingetm04-regular-webfont.svg#aj-kunheing-04') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'aj-13bold';
+    src: url('aj13-bold-webfont.eot');
+    src: url('aj13-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('aj13-bold-webfont.woff2') format('woff2'),
+         url('aj13-bold-webfont.woff') format('woff'),
+         url('aj13-bold-webfont.ttf') format('truetype'),
+         url('aj13-bold-webfont.svg#aj-13bold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'aj-13extra-light';
+    src: url('aj13-extralight-webfont.eot');
+    src: url('aj13-extralight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('aj13-extralight-webfont.woff2') format('woff2'),
+         url('aj13-extralight-webfont.woff') format('woff'),
+         url('aj13-extralight-webfont.ttf') format('truetype'),
+         url('aj13-extralight-webfont.svg#aj-13extra-light') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'aj-13light';
+    src: url('aj13-light-webfont.eot');
+    src: url('aj13-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('aj13-light-webfont.woff2') format('woff2'),
+         url('aj13-light-webfont.woff') format('woff'),
+         url('aj13-light-webfont.ttf') format('truetype'),
+         url('aj13-light-webfont.svg#aj-13light') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'aj-13medium';
+    src: url('aj13-medium-webfont.eot');
+    src: url('aj13-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('aj13-medium-webfont.woff2') format('woff2'),
+         url('aj13-medium-webfont.woff') format('woff'),
+         url('aj13-medium-webfont.ttf') format('truetype'),
+         url('aj13-medium-webfont.svg#aj-13medium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'aj-13regular';
+    src: url('aj13-regular-webfont.eot');
+    src: url('aj13-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('aj13-regular-webfont.woff2') format('woff2'),
+         url('aj13-regular-webfont.woff') format('woff'),
+         url('aj13-regular-webfont.ttf') format('truetype'),
+         url('aj13-regular-webfont.svg#aj-13regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'aj-13semi-bold';
+    src: url('aj13-semibold-webfont.eot');
+    src: url('aj13-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('aj13-semibold-webfont.woff2') format('woff2'),
+         url('aj13-semibold-webfont.woff') format('woff'),
+         url('aj13-semibold-webfont.ttf') format('truetype'),
+         url('aj13-semibold-webfont.svg#aj-13semi-bold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'aj-13thin';
+    src: url('aj13-thin-webfont.eot');
+    src: url('aj13-thin-webfont.eot?#iefix') format('embedded-opentype'),
+         url('aj13-thin-webfont.woff2') format('woff2'),
+         url('aj13-thin-webfont.woff') format('woff'),
+         url('aj13-thin-webfont.ttf') format('truetype'),
+         url('aj13-thin-webfont.svg#aj-13thin') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'aj-kunheing-1';
+    src: url('ajkunheing1-regular-webfont.eot');
+    src: url('ajkunheing1-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('ajkunheing1-regular-webfont.woff2') format('woff2'),
+         url('ajkunheing1-regular-webfont.woff') format('woff'),
+         url('ajkunheing1-regular-webfont.ttf') format('truetype'),
+         url('ajkunheing1-regular-webfont.svg#aj-kunheing-1') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'aj-kunheing-2';
+    src: url('ajkunheing2-regular-webfont.eot');
+    src: url('ajkunheing2-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('ajkunheing2-regular-webfont.woff2') format('woff2'),
+         url('ajkunheing2-regular-webfont.woff') format('woff'),
+         url('ajkunheing2-regular-webfont.ttf') format('truetype'),
+         url('ajkunheing2-regular-webfont.svg#aj-kunheing-2') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'aj-kunheing-3';
+    src: url('ajkunheing3-regular-webfont.eot');
+    src: url('ajkunheing3-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('ajkunheing3-regular-webfont.woff2') format('woff2'),
+         url('ajkunheing3-regular-webfont.woff') format('woff'),
+         url('ajkunheing3-regular-webfont.ttf') format('truetype'),
+         url('ajkunheing3-regular-webfont.svg#aj-kunheing-3') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'aj-kunheing-4';
+    src: url('ajkunheing4-regular-webfont.eot');
+    src: url('ajkunheing4-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('ajkunheing4-regular-webfont.woff2') format('woff2'),
+         url('ajkunheing4-regular-webfont.woff') format('woff'),
+         url('ajkunheing4-regular-webfont.ttf') format('truetype'),
+         url('ajkunheing4-regular-webfont.svg#aj-kunheing-4') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'aj-kunheing-6';
+    src: url('ajkunheing6-regular-webfont.eot');
+    src: url('ajkunheing6-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('ajkunheing6-regular-webfont.woff2') format('woff2'),
+         url('ajkunheing6-regular-webfont.woff') format('woff'),
+         url('ajkunheing6-regular-webfont.ttf') format('truetype'),
+         url('ajkunheing6-regular-webfont.svg#aj-kunheing-6') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
