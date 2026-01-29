@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Profile Frame Studio - สร้างกรอบรูปโปรไฟล์</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- ฝังฟอนต์ที่กำหนด -->
+    <link href='https://saosu-mp.github.io/font/all.css' rel='stylesheet'/>
+    <style>
+        :root {
+            --primary-font: 'NamTeng2017', sans-serif;
+        }
+        body { 
+            font-family: var(--primary-font); 
+            background-color: #f0f2f5; 
+            touch-action: manipulation;
+        }
+        h1, h2, button, span, p {
+            font-family: var(--primary-font);
+        }
+        .canvas-container { 
+            position: relative; 
+            width: 100%; 
+            max-width: 500px; 
+            aspect-ratio: 1/1; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15); 
+            border-radius: 1rem; 
+            overflow: hidden; 
+            background: #ffffff; 
+            border: 4px solid white;
+            touch-action: none; /* ป้องกันการเลื่อนหน้าจอขณะลากรูป */
+        }
+        #mainCanvas { width: 100%; height: 100%; display: block; cursor: move; }
+        .slider-control { -webkit-appearance: none; width: 100%; height: 8px; background: #dfe3e8; border-radius: 10px; outline: none; }
+        .slider-control::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 24px; height: 24px; background: #1877f2; cursor: pointer; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+        .hidden-input { display: none; }
+        .frame-card { transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer; border: 2px solid transparent; }
+        .frame-card:hover { transform: scale(1.02); }
+        .frame-card.active { border-color: #1877f2; background-color: #e7f3ff; }
+        
+        /* ปรับแต่ง Scrollbar สำหรับรายการเฟรมบนมือถือ */
+        #frameList::-webkit-scrollbar { height: 4px; }
+        #frameList::-webkit-scrollbar-thumb { background: #bcc0c4; border-radius: 10px; }
+    </style>
+</head>
+<body class="antialiased text-slate-900">
+    <div class="min-h-screen flex flex-col items-center py-6 px-4">
+        <!-- Header -->
+        <header class="text-center mb-8 max-w-2xl">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#1877f2] mb-2">Profile Frame Studio</h1>
+            <p class="text-slate-600 text-lg leading-relaxed">ออกแบบกรอบรูปโปรไฟล์ของคุณให้โดดเด่น รองรับทุกอุปกรณ์</p>
+        </header>
+
+        <div class="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <!-- Left Side: Preview & Controls -->
+            <div class="lg:col-span-7 flex flex-col items-center">
+                <div class="canvas-container mb-6 group" id="dropZone">
+                    <canvas id="mainCanvas" width="1024" height="1024"></canvas>
+                    <div id="placeholderText" class="absolute inset-0 flex flex-col items-center justify-center text-slate-400 pointer-events-none bg-slate-50 transition-opacity">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 mb-4 opacity-30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        <p class="text-xl font-bold">แตะเพื่อเลือกรูปภาพ</p>
+                        <p class="text-sm opacity-70 mt-1">รูปจะขยายเต็มกรอบอัตโนมัติ</p>
+                    </div>
+                </div>
+
+                <!-- Range Adjusters -->
+                <div class="w-full max-w-[500px] bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-6">
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-bold text-slate-700">ซูมภาพ (Zoom)</span>
+                            <span id="zoomVal" class="text-xs font-bold text-blue-600">100%</span>
+                        </div>
+                        <input type="range" id="zoomRange" min="0.1" max="3" step="0.01" value="1" class="slider-control flex-1">
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-bold text-slate-700">หมุนภาพ (Rotate)</span>
+                            <span id="rotateVal" class="text-xs font-bold text-blue-600">0°</span>
+                        </div>
+                        <input type="range" id="rotateRange" min="0" max="360" step="1" value="0" class="slider-control flex-1">
+                    </div>
+                    <button id="resetView" class="w-full py-2 text-sm text-slate-500 font-bold hover:text-blue-600 transition-colors border-t border-slate-100 mt-2">
+                        คืนค่าเริ่มต้น (Reset View)
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Side: Actions & Selection -->
+            <div class="lg:col-span-5 space-y-6">
+                <!-- Action Tools -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-4">
+                    <h2 class="text-xl font-bold flex items-center gap-2">
+                        <span class="w-2 h-6 bg-blue-600 rounded-full"></span>
+                        เครื่องมือจัดการ
+                    </h2>
+                    <input type="file" id="imageInput" accept="image/*" class="hidden-input">
+                    <div class="grid grid-cols-2 gap-4">
+                        <button onclick="document.getElementById('imageInput').click()" class="flex flex-col items-center justify-center gap-2 bg-[#1877f2] hover:bg-[#166fe5] text-white p-4 rounded-xl transition-all shadow-md">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            <span class="text-sm">เปลี่ยนรูปภาพ</span>
+                        </button>
+                        <button id="downloadBtn" class="flex flex-col items-center justify-center gap-2 bg-[#42b72a] hover:bg-[#36a420] text-white p-4 rounded-xl transition-all shadow-md">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1H3v1h1v1h1v-1h1v-1H5v-1H4zm1 2h1v1H5v-1zm16-4v1h1v1h-1v1h-1v-1h-1v-1h1v-1h1zM5 4a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V6a2 2 0 00-2-2H5zm10 0a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V6a2 2 0 00-2-2h-2zM5 14a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5z" />
+                            </svg>
+                            <span class="text-sm">ดาวน์โหลดรูป</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Frame List -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                    <h2 class="text-xl font-bold mb-4 flex items-center gap-2">
+                        <span class="w-2 h-6 bg-pink-500 rounded-full"></span>
+                        เลือกเทมเพลตกรอบรูป
+                    </h2>
+                    <div class="grid grid-cols-3 gap-3 max-h-[400px] overflow-y-auto pr-2" id="frameList">
+                        <!-- รายการกรอบรูปจะถูกสร้างจาก JS -->
+                    </div>
+                </div>
+
+                <!-- Support Info -->
+                <div class="p-4 rounded-xl bg-blue-50 border border-blue-100 flex items-start gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <div>
+                        <p class="text-xs font-bold text-blue-800">คำแนะนำการใช้งาน</p>
+                        <p class="text-[10px] text-blue-600 mt-0.5">ลากรูปภาพเพื่อปรับตำแหน่ง หรือใช้แถบสไลด์เพื่อซูมและหมุน เหมาะสำหรับรูปโปรไฟล์ขนาด 1:1</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('mainCanvas');
+        const ctx = canvas.getContext('2d');
+        const imageInput = document.getElementById('imageInput');
+        const zoomRange = document.getElementById('zoomRange');
+        const rotateRange = document.getElementById('rotateRange');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const frameList = document.getElementById('frameList');
+        const placeholderText = document.getElementById('placeholderText');
+        const resetViewBtn = document.getElementById('resetView');
+        const zoomValDisp = document.getElementById('zoomVal');
+        const rotateValDisp = document.getElementById('rotateVal');
+
+        let userImage = null;
+        let currentFrame = null;
+        let loadedFrameImages = {}; 
+        
+        let state = {
+            x: 512,
+            y: 512,
+            scale: 1,
+            rotation: 0,
+            isDragging: false,
+            lastMouseX: 0,
+            lastMouseY: 0
+        };
+
+        const frames = [
+            { id: 1, name: 'Frame 1', url: 'https://lh3.googleusercontent.com/u/0/d/13LOD845yIpoxw4hFmtqIVlUMjuq8nB_2' },
+            { id: 2, name: 'Frame 2', url: 'https://lh3.googleusercontent.com/u/0/d/18olSf-s8GSSmxgwb7SDSpVw6mQ1RxeIC' },
+            { id: 3, name: 'Frame 3', url: 'https://lh3.googleusercontent.com/u/0/d/1h4MBzbipWquF_dUNj4m3nz2_GBX5k1Ml' }
+        ];
+
+        async function loadFrameImage(frame) {
+            if (loadedFrameImages[frame.url]) return loadedFrameImages[frame.url];
+            return new Promise((resolve) => {
+                const img = new Image();
+                img.crossOrigin = "anonymous"; 
+                img.onload = () => {
+                    loadedFrameImages[frame.url] = img;
+                    resolve(img);
+                };
+                img.src = frame.url;
+            });
+        }
+
+        async function initFrames() {
+            frameList.innerHTML = '';
+            for (const [index, frame] of frames.entries()) {
+                const btn = document.createElement('div');
+                btn.className = `frame-card aspect-square rounded-xl bg-slate-50 p-2 flex flex-col items-center justify-center border-2 ${currentFrame?.id === frame.id ? 'active' : 'border-slate-100'}`;
+                
+                btn.innerHTML = `
+                    <img src="${frame.url}" class="w-full h-full object-contain rounded-lg" onerror="this.src='https://via.placeholder.com/100?text=Error'">
+                    <span class="text-[10px] mt-1 font-bold text-slate-500">${frame.name}</span>
+                `;
+                
+                btn.onclick = async () => {
+                    currentFrame = frame;
+                    document.querySelectorAll('.frame-card').forEach(c => {
+                        c.classList.remove('active');
+                        c.classList.add('border-slate-100');
+                    });
+                    btn.classList.add('active');
+                    btn.classList.remove('border-slate-100');
+                    await loadFrameImage(frame);
+                    draw();
+                };
+                
+                frameList.appendChild(btn);
+                if (index === 0) {
+                    currentFrame = frame;
+                    await loadFrameImage(frame);
+                    btn.classList.add('active');
+                }
+            }
+        }
+
+        function fitToFrame() {
+            if (!userImage) return;
+            const scaleWidth = 1024 / userImage.width;
+            const scaleHeight = 1024 / userImage.height;
+            state.scale = Math.max(scaleWidth, scaleHeight);
+            state.x = 512;
+            state.y = 512;
+            state.rotation = 0;
+            updateUI();
+        }
+
+        function updateUI() {
+            zoomRange.value = state.scale;
+            zoomValDisp.innerText = Math.round(state.scale * 100) + '%';
+            rotateRange.value = state.rotation;
+            rotateValDisp.innerText = state.rotation + '°';
+        }
+
+        imageInput.onchange = (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    const img = new Image();
+                    img.onload = () => {
+                        userImage = img;
+                        placeholderText.classList.add('opacity-0');
+                        fitToFrame();
+                        draw();
+                    };
+                    img.src = event.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        };
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // 1. วาดรูปผู้ใช้
+            if (userImage) {
+                ctx.save();
+                ctx.translate(state.x, state.y);
+                ctx.rotate(state.rotation * Math.PI / 180);
+                ctx.scale(state.scale, state.scale);
+                ctx.drawImage(userImage, -userImage.width / 2, -userImage.height / 2);
+                ctx.restore();
+            }
+
+            // 2. วาดกรอบรูปทับหน้า
+            if (currentFrame && loadedFrameImages[currentFrame.url]) {
+                ctx.drawImage(loadedFrameImages[currentFrame.url], 0, 0, 1024, 1024);
+            }
+        }
+
+        // --- Interaction Logic (Multi-platform) ---
+        function getCoords(e) {
+            const rect = canvas.getBoundingClientRect();
+            const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+            const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+            return {
+                x: (clientX - rect.left) * (1024 / rect.width),
+                y: (clientY - rect.top) * (1024 / rect.height)
+            };
+        }
+
+        function handleStart(e) {
+            if (!userImage) return;
+            state.isDragging = true;
+            const coords = getCoords(e);
+            state.lastMouseX = coords.x;
+            state.lastMouseY = coords.y;
+        }
+
+        function handleMove(e) {
+            if (!state.isDragging || !userImage) return;
+            const coords = getCoords(e);
+            state.x += (coords.x - state.lastMouseX);
+            state.y += (coords.y - state.lastMouseY);
+            state.lastMouseX = coords.x;
+            state.lastMouseY = coords.y;
+            draw();
+        }
+
+        function handleEnd() { state.isDragging = false; }
+
+        canvas.addEventListener('mousedown', handleStart);
+        window.addEventListener('mousemove', handleMove);
+        window.addEventListener('mouseup', handleEnd);
+
+        canvas.addEventListener('touchstart', (e) => { e.preventDefault(); handleStart(e); }, {passive: false});
+        canvas.addEventListener('touchmove', (e) => { e.preventDefault(); handleMove(e); }, {passive: false});
+        canvas.addEventListener('touchend', handleEnd);
+
+        zoomRange.oninput = (e) => { 
+            state.scale = parseFloat(e.target.value); 
+            zoomValDisp.innerText = Math.round(state.scale * 100) + '%';
+            draw(); 
+        };
+        rotateRange.oninput = (e) => { 
+            state.rotation = parseInt(e.target.value); 
+            rotateValDisp.innerText = state.rotation + '°';
+            draw(); 
+        };
+        resetViewBtn.onclick = () => { fitToFrame(); draw(); };
+
+        downloadBtn.onclick = () => {
+            if (!userImage) { alert("กรุณาเลือกรูปภาพของคุณก่อนดาวน์โหลดครับ"); return; }
+            const link = document.createElement('a');
+            link.download = `frame-profile-${Date.now()}.png`;
+            link.href = canvas.toDataURL('image/png', 1.0);
+            link.click();
+        };
+
+        // เริ่มต้นระบบ
+        initFrames().then(() => draw());
+    </script>
+</body>
+</html>
