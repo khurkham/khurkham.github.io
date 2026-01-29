@@ -3,20 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Profile Frame Studio - สร้างกรอบรูปโปรไฟล์</title>
+    <title>Profile Frame Studio - ၶူင်သၢင်ႈပရူဝ်ႇၾႆးၽဵတ်ႉၿုၵ်ႉ</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- ฝังฟอนต์ที่กำหนด -->
     <link href='https://saosu-mp.github.io/font/all.css' rel='stylesheet'/>
     <style>
         :root {
             --primary-font: 'NamTeng2017', sans-serif;
+            --fb-blue: #1877f2;
+            --fb-green: #42b72a;
         }
         body { 
             font-family: var(--primary-font); 
             background-color: #f0f2f5; 
             touch-action: manipulation;
+            display: flex;
+            flex-direction: column;
+            min-h-screen: 100vh;
         }
-        h1, h2, button, span, p {
+        h1, h2, h3, button, span, p, a {
             font-family: var(--primary-font);
         }
         .canvas-container { 
@@ -29,27 +34,76 @@
             overflow: hidden; 
             background: #ffffff; 
             border: 4px solid white;
-            touch-action: none; /* ป้องกันการเลื่อนหน้าจอขณะลากรูป */
+            touch-action: none; 
         }
         #mainCanvas { width: 100%; height: 100%; display: block; cursor: move; }
         .slider-control { -webkit-appearance: none; width: 100%; height: 8px; background: #dfe3e8; border-radius: 10px; outline: none; }
-        .slider-control::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 24px; height: 24px; background: #1877f2; cursor: pointer; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+        .slider-control::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 24px; height: 24px; background: var(--fb-blue); cursor: pointer; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
         .hidden-input { display: none; }
         .frame-card { transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer; border: 2px solid transparent; }
         .frame-card:hover { transform: scale(1.02); }
-        .frame-card.active { border-color: #1877f2; background-color: #e7f3ff; }
+        .frame-card.active { border-color: var(--fb-blue); background-color: #e7f3ff; }
         
-        /* ปรับแต่ง Scrollbar สำหรับรายการเฟรมบนมือถือ */
-        #frameList::-webkit-scrollbar { height: 4px; }
+        #frameList::-webkit-scrollbar { width: 4px; }
         #frameList::-webkit-scrollbar-thumb { background: #bcc0c4; border-radius: 10px; }
+
+        footer {
+            margin-top: auto;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            backdrop-filter: blur(4px);
+        }
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 1.5rem;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
     </style>
 </head>
 <body class="antialiased text-slate-900">
-    <div class="min-h-screen flex flex-col items-center py-6 px-4">
-        <!-- Header -->
-        <header class="text-center mb-8 max-w-2xl">
-            <h1 class="text-4xl md:text-5xl font-bold text-[#1877f2] mb-2">Profile Frame Studio</h1>
-            <p class="text-slate-600 text-lg leading-relaxed">ออกแบบกรอบรูปโปรไฟล์ของคุณให้โดดเด่น รองรับทุกอุปกรณ์</p>
+
+    <!-- Header / Navigation Bar -->
+    <nav class="w-full bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-2">
+                     <!-- อัปเดตไอคอนด้านซ้ายมือเป็นรูปภาพจาก Google Drive -->
+                    <div class="overflow-hidden rounded-lg w-10 h-10 border border-slate-100 shadow-sm">
+                        <img id="brandIcon" src="https://lh3.googleusercontent.com/u/0/d/1HZsbazair8dQDqN2qBDmgob4Y9wrMCk1" alt="Logo" class="w-full h-full object-cover">
+                    </div>
+                    <span class="text-xl font-bold tracking-tight text-slate-800">Profile Tai Studio</span>
+                </div>
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="#" class="text-slate-600 hover:text-[#1877f2] font-medium transition-colors">Home</a>
+                    <button onclick="openModal('aboutModal')" class="text-slate-600 hover:text-[#1877f2] font-medium transition-colors">ၵပ်းၵၢႆႇႁဝ်း</button>
+                    <button onclick="openModal('pdpaModal')" class="text-slate-600 hover:text-[#1877f2] font-medium transition-colors">Policy PDPA</button>
+                    <span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-500 font-bold uppercase"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow flex flex-col items-center py-8 px-4">
+        <!-- Hero Section -->
+        <header class="text-center mb-10 max-w-2xl">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#1877f2] mb-3">Profile Tai Studio</h1>
+            <p class="text-slate-600 text-lg leading-relaxed">ၶူိင်ႈမိုဝ်းသၢင်ႈ ၽရႅမ်းၶႅပ်းႁၢင်ႈ ပရူဝ်ႇၾႆး ႁွင်းႁပ်ႉၶိူင်ႈၵူႈဢၼ်</p>
         </header>
 
         <div class="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -61,8 +115,8 @@
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 mb-4 opacity-30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                         </svg>
-                        <p class="text-xl font-bold">แตะเพื่อเลือกรูปภาพ</p>
-                        <p class="text-sm opacity-70 mt-1">รูปจะขยายเต็มกรอบอัตโนมัติ</p>
+                        <p class="text-xl font-bold">ၼဵၵ်းတႃႇလိူၵ်ႈၶႅပ်းႁၢင်ႈ</p>
+                        <p class="text-sm opacity-70 mt-1">ၶႅပ်းႁၢင်ႈၼၼ်ႉ မၼ်းတေၶႂၢၵ်ႈဢွၵ်ႇဢေႃႇတူဝ်ႇမႃးႁင်းမၼ်း ႁႂ်ႈတဵမ်ၼႂ်းၽရႅမ်း</p>
                     </div>
                 </div>
 
@@ -70,20 +124,20 @@
                 <div class="w-full max-w-[500px] bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-6">
                     <div class="space-y-3">
                         <div class="flex justify-between items-center">
-                            <span class="text-sm font-bold text-slate-700">ซูมภาพ (Zoom)</span>
+                            <span class="text-sm font-bold text-slate-700">ၶႂၢၵ်ႈတူၺ်း (Zoom)</span>
                             <span id="zoomVal" class="text-xs font-bold text-blue-600">100%</span>
                         </div>
                         <input type="range" id="zoomRange" min="0.1" max="3" step="0.01" value="1" class="slider-control flex-1">
                     </div>
                     <div class="space-y-3">
                         <div class="flex justify-between items-center">
-                            <span class="text-sm font-bold text-slate-700">หมุนภาพ (Rotate)</span>
+                            <span class="text-sm font-bold text-slate-700">ပၼ်ႇၶႅပ်းႁၢင်ႈ (Rotate)</span>
                             <span id="rotateVal" class="text-xs font-bold text-blue-600">0°</span>
                         </div>
                         <input type="range" id="rotateRange" min="0" max="360" step="1" value="0" class="slider-control flex-1">
                     </div>
                     <button id="resetView" class="w-full py-2 text-sm text-slate-500 font-bold hover:text-blue-600 transition-colors border-t border-slate-100 mt-2">
-                        คืนค่าเริ่มต้น (Reset View)
+                    မႄးၶုိၼ်ၶိုၼ်း မိူၼ်ၵဝ်ႇ (Reset View)
                     </button>
                 </div>
             </div>
@@ -92,51 +146,110 @@
             <div class="lg:col-span-5 space-y-6">
                 <!-- Action Tools -->
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-4">
-                    <h2 class="text-xl font-bold flex items-center gap-2">
+                    <h2 class="text-xl font-bold flex items-center gap-2 text-slate-800">
                         <span class="w-2 h-6 bg-blue-600 rounded-full"></span>
-                        เครื่องมือจัดการ
+                        ၶိူင်ႈမိုဝ်းၸတ်းၵၢၼ်
                     </h2>
                     <input type="file" id="imageInput" accept="image/*" class="hidden-input">
                     <div class="grid grid-cols-2 gap-4">
-                        <button onclick="document.getElementById('imageInput').click()" class="flex flex-col items-center justify-center gap-2 bg-[#1877f2] hover:bg-[#166fe5] text-white p-4 rounded-xl transition-all shadow-md">
+                        <button onclick="document.getElementById('imageInput').click()" class="flex flex-col items-center justify-center gap-2 bg-[#1877f2] hover:bg-[#166fe5] text-white p-4 rounded-xl transition-all shadow-md active:scale-95">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                             </svg>
-                            <span class="text-sm">เปลี่ยนรูปภาพ</span>
+                            <span class="text-sm">လၢႆႈၶႅပ်းႁၢင်ႈ</span>
                         </button>
-                        <button id="downloadBtn" class="flex flex-col items-center justify-center gap-2 bg-[#42b72a] hover:bg-[#36a420] text-white p-4 rounded-xl transition-all shadow-md">
+                        <button id="downloadBtn" class="flex flex-col items-center justify-center gap-2 bg-[#42b72a] hover:bg-[#36a420] text-white p-4 rounded-xl transition-all shadow-md active:scale-95">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1H3v1h1v1h1v-1h1v-1H5v-1H4zm1 2h1v1H5v-1zm16-4v1h1v1h-1v1h-1v-1h-1v-1h1v-1h1zM5 4a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V6a2 2 0 00-2-2H5zm10 0a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V6a2 2 0 00-2-2h-2zM5 14a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5z" />
                             </svg>
-                            <span class="text-sm">ดาวน์โหลดรูป</span>
+                            <span class="text-sm">ၸၼ်ဢဝ်ၶႅပ်းႁၢင်ႈ</span>
                         </button>
                     </div>
                 </div>
 
                 <!-- Frame List -->
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-                    <h2 class="text-xl font-bold mb-4 flex items-center gap-2">
+                    <h2 class="text-xl font-bold mb-4 flex items-center gap-2 text-slate-800">
                         <span class="w-2 h-6 bg-pink-500 rounded-full"></span>
-                        เลือกเทมเพลตกรอบรูป
+                        လိူၵ်ႈဢဝ် ပိူင်ၾၢင်ၶႅပ်းႁၢင်ႈ
                     </h2>
-                    <div class="grid grid-cols-3 gap-3 max-h-[400px] overflow-y-auto pr-2" id="frameList">
+                    <div class="grid grid-cols-3 gap-3 max-h-[350px] overflow-y-auto pr-2" id="frameList">
                         <!-- รายการกรอบรูปจะถูกสร้างจาก JS -->
-                    </div>
-                </div>
-
-                <!-- Support Info -->
-                <div class="p-4 rounded-xl bg-blue-50 border border-blue-100 flex items-start gap-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <div>
-                        <p class="text-xs font-bold text-blue-800">คำแนะนำการใช้งาน</p>
-                        <p class="text-[10px] text-blue-600 mt-0.5">ลากรูปภาพเพื่อปรับตำแหน่ง หรือใช้แถบสไลด์เพื่อซูมและหมุน เหมาะสำหรับรูปโปรไฟล์ขนาด 1:1</p>
                     </div>
                 </div>
             </div>
         </div>
+    </main>
+
+    <!-- Modal: About Us -->
+    <div id="aboutModal" class="modal" onclick="closeModal('aboutModal')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <h2 class="text-2xl font-bold text-[#1877f2] mb-4">ၵပ်းၵၢႆႇႁဝ်း</h2>
+            <div class="space-y-4 text-slate-600">
+                <p>ยินดีต้อนรับสู่ <strong>Profile Frame Tai Studio</strong> ၶိူင်ႈၸႂ်ႉတိုဝ်းဢၼ်ၸွႆႈႁဵတ်းဢွၵ်ႇၶႅပ်းႁၢင်ႈပရူဝ်ႇၾႆးဢၼ်ၶိုၵ်ႉၶႅမ်ႉဝႆးငၢႆႈ။</p>
+                <p>ႁဝ်းၶႃႈယိူင်းၸူးတႃႇတေႁဵတ်းဢွၵ်ႇ ၶိူင်ႈၸႂ်ႉတိုဝ်းၶႅပ်းႁၢင်ႈပရူဝ်ႇၾႆးဢၼ်ၸႂ်ႉတိုဝ်းလႆႈငၢႆႈလူမ်ၸႂ် လႄႈဢၼ်ထုၵ်ႇမႅၼ်ႈၸွမ်းၵၢပ်ႈပၢၼ်သူဝ်ႇသိူဝ်ႇမီႇတႃႇယႃႇၵၢပ်ႈပၢၼ်မႂ်ႇၼၼ်ႉယဝ်ႉ။ ၶူင်းၵၢၼ်ၼႆႉႁဝ်းၶႃႈလႆႈၶူင်သၢင်ႈဢွၵ်ႇမႃးလႄႈလႆႈမႄးၵုမ်းလုမ်းလႃးဝႆႉလူၺ်ႈ ၶိူဝ်းၶမ်း  <strong>Khurkham</strong></p>
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                    <h3 class="font-bold text-slate-800 mb-2">ယိူင်းဢၢၼ်းၶွင်ႁဝ်း</h3>
+                    <ul class="list-disc list-inside space-y-1">
+                     
+			<li>ၵမ်ႉထႅမ်ပၼ်လွင်ႈၶူင်သၢင်ႈ ဢၼ်ၸွမ်းပၢႆးဝူၼ်ႉၵၢပ်ႈပၢၼ်မႂ်ႇ</li>
+			<li>ၵမ်ႉထႅမ်ပၼ်လွင်ႈတူင်ႉၼိုင် ဢၼ်ပဵၼ်မိၵ်ႈမၢႆလူၺ်ႈၶွပ်ႇၶႅပ်းႁၢင်ႈ</li>
+			<li>ပၼ်ၶိူင်ႈၸႂ်ႉတိုဝ်းၾီး ဢၼ်ဢမ်ႇလႆႈမီးလိၵ်ႈပိုၼ်ၽၢဝ်ႇၸွမ်ႇၵႄႈ</li>
+                    </ul>
+                </div>
+            </div>
+            <button onclick="closeModal('aboutModal')" class="mt-6 w-full py-3 bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold rounded-xl transition-colors">ပိၵ်ႉတီႈၼႆႈ</button>
+        </div>
     </div>
+
+    <!-- Modal: PDPA -->
+    <div id="pdpaModal" class="modal" onclick="closeModal('pdpaModal')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <h2 class="text-2xl font-bold text-slate-800 mb-4 flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+                Policy (PDPA)
+            </h2>
+            <div class="space-y-4 text-sm text-slate-600 leading-relaxed">
+                <p>ၸွမ်းၼင်ႇ ပၵ်းပိူင် ၵႅတ်ႇၶႄၶေႃႈမုၼ်းသုၼ်ႇတူဝ် (PDPA) ၼၼ်ႉသေ ႁဝ်းၶႃႈၶႂ်ႈပွင်ႇၶၢဝ်ႇပၼ်လွင်ႈၸတ်းၵၢၼ်ၶေႃႈမုၼ်း ႁူဝ်ယွႆႈမၼ်း မိူၼ်ၼင်ႇတႂ်ႈၼႆႉယူႇၶႃႈ</p>
+                <div class="space-y-3">
+                    <p><strong>1. လွင်ႈၵဵပ်းၶေႃႈမုၼ်း</strong> ဝႅပ်ႉသၢႆႉၼႆႉ ဢမ်ႇၵဵပ်းၶေႃႈမုၼ်းသုၼ်ႇတူဝ်သူၸဝ်ႈ။ ၶႅပ်းႁၢင်ႈဢၼ်ၸဝ်ႈၵဝ်ႇတၢင်ႇလူင်းၼၼ်ႉ မၼ်းတေႁဵတ်းၵၢၼ်ပၼ်ၵမ်းသိုဝ်ႈ လူၺ်ႈၶိူင်ႈတူၺ်းလိၵ်ႈၸဝ်ႈၵဝ်ႇ (Client-side Processing) ၼၼ်ႉယဝ်ႉ။</p>
+                    <p><strong>2. လွင်ႈႁဵတ်းၵၢၼ်ၶႅပ်းႁၢင်ႈ</strong> ၶႅပ်းႁၢင်ႈ ပရူဝ်ႇၾႆးၸဝ်ႈၵဝ်ႇၼၼ်ႉ တေဢမ်ႇသူင်ႇပၼ်တီႈ Server ႁဝ်းၶႃႈ။ ၶေႃႈမုၼ်းတင်းမူတ်း တေမွတ်ႇပႅတ်ႈၵမ်းလဵဝ် မိူဝ်ႈၸဝ်ႈၵဝ်ႇဢိုတ်းပႅတ်ႈၼႃႈဝႅပ်ႉသၢႆႉ ဢမ်ႇၼၼ် ႁဵတ်း Refresh ၼႃႈဝႅပ်ႉသၢႆႉၼၼ်ႉလႆႈယူႇ။</p>
+                    <p><strong>3. ၶုၵ်ႉၵိ (Cookies):</strong> ႁဝ်းၶႃႈတေၸၢင်ႈၸႂ်ႉတိုဝ်း Cookies ဢၼ်လူဝ်ႇတႃႇတွင်းလႆႈလွင်ႈတမ်းဝၢင်း ပိူင်ၾၢင်ၵမ်ႈၽွင်ႈ တွၼ်ႈတႃႇဝဵပ်ႉသၢႆႉႁဵတ်းၵၢၼ်ၼၼ်ႉၵူၺ်းၶႃႈ။</p>
+                    <p><strong>4. သုၼ်ႇလႆႈၽူႈမီးၶေႃႈမုၼ်း</strong> ၸဝ်ႈၵဝ်ႇမီးသုၼ်ႇၵုမ်းထိင်း ၶႅပ်းႁၢင်ႈလႄႈ ၸၼ်ဢဝ်ၶႅပ်းႁၢင်ႈလွတ်ႈလွတ်ႈလႅဝ်းလႅဝ်း။</p>
+                </div>
+                <p class="bg-blue-50 p-3 rounded-lg text-blue-800 italic text-xs">သင်ဝႃႈမိူဝ်းၼႃႈမႃး မီးလွင်ႈလႅၵ်ႈလၢႆႈပၵ်းပိူင်ၼႆၸိုင် ႁဝ်းတေဢဝ်ၼႃႈဝဵပ်ႉသၢႆႉၼႆႉသေပွင်ႇၶၢဝ်ႇပၼ်ၵမ်းလဵဝ်ယူႇ။</p>
+            </div>
+            <button onclick="closeModal('pdpaModal')" class="mt-6 w-full py-3 bg-[#1877f2] hover:bg-blue-700 text-white font-bold rounded-xl transition-colors">ႁုယဝ်ႉလႄႈပိၵ်ႉ</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w-full bg-white border-t border-slate-200 py-8 px-4 mt-12">
+        <div class="max-w-7xl mx-auto flex flex-col items-center gap-4 text-center">
+            <div class="flex items-center gap-2 opacity-80 grayscale">
+                <div class="bg-slate-800 p-1.5 rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                    </svg>
+                </div>
+                <span class="text-lg font-bold text-slate-800">Profile Tai Studio</span>
+            </div>
+            <p class="text-slate-500 text-sm max-w-md">ၶိူင်ႈမိုဝ်းၼႆႉႁဵတ်းဢွၵ်ႇမႃးတႃႇၸွႆႈထႅမ် လွင်ႈၶူင်ႈသၢင်ႈႁဵတ်းဢွၵ်ႇၶႅပ်းႁၢင်ႈ ပရူဝ်ႇၾႆး ဢၼ်ႁၢင်ႈလီ လႄႈ ဢၼ်ၶိုၵ်ႉၶႅမ်ႉဢၼ်ထုၵ်ႇမႅၼ်ႈၸွမ်းပိူင်ၼိူဝ်သိုဝ်ႇတူင်ႇဝူင်းၵူၼ်းၼၼ်ႉယဝ်ႉ။</p>
+            
+            <!-- Quick Links in Footer -->
+            <div class="flex gap-4 mb-2">
+                <button onclick="openModal('aboutModal')" class="text-xs text-blue-600 hover:underline">ၵပ်းၵၢႆႇႁဝ်း</button>
+                <button onclick="openModal('pdpaModal')" class="text-xs text-blue-600 hover:underline">Policy PDPA</button>
+            </div>
+
+            <div class="flex flex-col gap-1">
+                <p class="text-slate-400 text-xs">© 2026 All Rights Reserved</p>
+                <p class="text-slate-800 font-bold tracking-widest uppercase text-xs">Developed By Khurkham</p>
+            </div>
+        </div>
+    </footer>
 
     <script>
         const canvas = document.getElementById('mainCanvas');
@@ -166,10 +279,23 @@
         };
 
         const frames = [
-            { id: 1, name: 'Frame 1', url: 'https://lh3.googleusercontent.com/u/0/d/13LOD845yIpoxw4hFmtqIVlUMjuq8nB_2' },
-            { id: 2, name: 'Frame 2', url: 'https://lh3.googleusercontent.com/u/0/d/18olSf-s8GSSmxgwb7SDSpVw6mQ1RxeIC' },
-            { id: 3, name: 'Frame 3', url: 'https://lh3.googleusercontent.com/u/0/d/1h4MBzbipWquF_dUNj4m3nz2_GBX5k1Ml' }
+            { id: 1, name: 'ပိူင်မၢႆ 1', url: 'https://lh3.googleusercontent.com/u/0/d/1bt_7Kg6sMVaDhh5NqGysk3Wq4TueV5Cm' },
+            { id: 2, name: 'ပိူင်မၢႆ 2', url: 'https://lh3.googleusercontent.com/u/0/d/1l2eGnUY9p7hFO8dX05XSziHSMVZhB8x1' },
+            { id: 3, name: 'ပိူင်မၢႆ 3', url: 'https://lh3.googleusercontent.com/u/0/d/1of7s2eEeMzX_JrWbS1H88m-OHuibHBjV' },
+	    { id: 4, name: 'ပိူင်မၢႆ 4', url: 'https://lh3.googleusercontent.com/u/0/d/1XN-5Pd_LCwkB_fSXPSYfI3UDXwhwnkB5' }
+
         ];
+
+        // Modal Functions
+        function openModal(id) {
+            document.getElementById(id).style.display = "block";
+            document.body.style.overflow = "hidden"; // ป้องกันการเลื่อนหน้าเว็บข้างหลัง
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).style.display = "none";
+            document.body.style.overflow = "auto";
+        }
 
         async function loadFrameImage(frame) {
             if (loadedFrameImages[frame.url]) return loadedFrameImages[frame.url];
@@ -192,7 +318,7 @@
                 
                 btn.innerHTML = `
                     <img src="${frame.url}" class="w-full h-full object-contain rounded-lg" onerror="this.src='https://via.placeholder.com/100?text=Error'">
-                    <span class="text-[10px] mt-1 font-bold text-slate-500">${frame.name}</span>
+                    <span class="text-[10px] mt-1 font-bold text-slate-500 uppercase">${frame.name}</span>
                 `;
                 
                 btn.onclick = async () => {
@@ -254,8 +380,6 @@
 
         function draw() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            // 1. วาดรูปผู้ใช้
             if (userImage) {
                 ctx.save();
                 ctx.translate(state.x, state.y);
@@ -264,14 +388,11 @@
                 ctx.drawImage(userImage, -userImage.width / 2, -userImage.height / 2);
                 ctx.restore();
             }
-
-            // 2. วาดกรอบรูปทับหน้า
             if (currentFrame && loadedFrameImages[currentFrame.url]) {
                 ctx.drawImage(loadedFrameImages[currentFrame.url], 0, 0, 1024, 1024);
             }
         }
 
-        // --- Interaction Logic (Multi-platform) ---
         function getCoords(e) {
             const rect = canvas.getBoundingClientRect();
             const clientX = e.touches ? e.touches[0].clientX : e.clientX;
@@ -323,14 +444,13 @@
         resetViewBtn.onclick = () => { fitToFrame(); draw(); };
 
         downloadBtn.onclick = () => {
-            if (!userImage) { alert("กรุณาเลือกรูปภาพของคุณก่อนดาวน์โหลดครับ"); return; }
+            if (!userImage) { alert("ၶႅၼ်းတေႃႈလိူၵ်ႈဢဝ်ၶႅပ်းႁၢင်ႈၸဝ်ႈၵဝ်ႇဢွၼ်တင် ၸင်ႇၵွႆႈၸၼ်ဢဝ်ၶႅပ်းႁၢင်ႈသေၵမ်း။"); return; }
             const link = document.createElement('a');
             link.download = `frame-profile-${Date.now()}.png`;
             link.href = canvas.toDataURL('image/png', 1.0);
             link.click();
         };
 
-        // เริ่มต้นระบบ
         initFrames().then(() => draw());
     </script>
 </body>
